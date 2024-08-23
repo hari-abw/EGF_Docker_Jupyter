@@ -85,3 +85,23 @@ This will create a *container* from the image and start it. Argument `-p` publis
 gunzip egfnotebook_latest.tar.gz
 docker image load --input egfnotebook_latest.tar
 ```
+
+**Minor Modifications to allow example to run with dna-sequence-viewer**
+
+Modified requirements.txt to read from forked dna-sequence-viewer github repo with minor change in code below.
+
+```sh
+diff --git a/dna_features_viewer/BiopythonTranslator/BiopythonTranslatorBase.py b/dna_features_viewer/BiopythonTranslator/BiopythonTranslatorBase.py
+index 74ff3f9..9988708 100644
+--- a/dna_features_viewer/BiopythonTranslator/BiopythonTranslatorBase.py
++++ b/dna_features_viewer/BiopythonTranslator/BiopythonTranslatorBase.py
+@@ -86,7 +86,7 @@ class BiopythonTranslatorBase:
+         filtered_features = self.compute_filtered_features(record.features)
+         return record_class(
+             sequence_length=len(record),
+-            sequence=str(record.seq) if record.seq.defined else None,
++            sequence=str(record.seq) if record.seq else None,
+             features=[
+                 self.translate_feature(feature)
+                 for feature in filtered_features
+```

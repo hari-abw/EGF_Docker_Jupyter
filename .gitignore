@@ -1,0 +1,3 @@
+*.pyc
+error_docker_install.txt
+.ipynb_checkpoints/

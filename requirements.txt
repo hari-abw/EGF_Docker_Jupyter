@@ -22,7 +22,7 @@ caravagene
 crecombio
 crazydoc
 dioscuri
-dna_features_viewer
+git+https://github.com/hari-abw/DnaFeaturesViewer.git#egg=dna_features_viewer
 dnacauldron
 dnachisel
 dnaweaver
@@ -32,6 +32,8 @@ genealloy
 geneblocks
 genedom
 goldenhinges
+jupyter
+jupyterlab
 icebreaker
 # kappagate  # see topkappy
 minotaor

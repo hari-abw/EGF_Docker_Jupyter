@@ -17,6 +17,10 @@ RUN apt-get install -y fontconfig libfontconfig1 libfreetype6 libx11-6 libxext6 
 RUN apt-get install -y xfonts-base xfonts-75dpi fonts-font-awesome fonts-lato
 RUN apt-get install -y xvfb
 
+# Install git
+RUN apt-get update && apt-get install -y git
+RUN apt-get install -y vim
+
 RUN apt-get install -y graphviz graphviz-dev libgraphviz-dev
 # The next line installs NCBI BLAST (for GeneBlocks, DNAWeaver, etc.)
 RUN apt-get install -y ncbi-blast+
@@ -48,6 +52,8 @@ RUN pip install ipywidgets
 WORKDIR /usr/src/app
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
+
+
 ########################################################################################
 # Opencontainer labels
 LABEL org.opencontainers.image.title="egf-notebook"
