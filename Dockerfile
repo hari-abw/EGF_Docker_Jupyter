@@ -35,12 +35,23 @@ RUN apt-get install -y gcc python3-dev
 RUN apt-get install -y libxslt1-dev g++
 # For PDF reports:
 RUN apt-get install -y fonts-inconsolata
+
+###########
+# Setup user harijay
+RUN useradd -m -s /bin/bash harijay && \
+usermod -aG sudo harijay
+RUN mkdir -p /home/harijay/downloads && chown harijay:harijay /home/harijay/downloads
+USER harijay
+WORKDIR /home/harijay/downloads
+RUN wget https://github.com/Edinburgh-Genome-Foundry/Numberjack/archive/v1.2.0.tar.gz
 ###############################################################################
 # Numberjack is built from source because pip doesn't install it properly:
-USER jovyan
+
+
 RUN wget https://github.com/Edinburgh-Genome-Foundry/Numberjack/archive/v1.2.0.tar.gz
 RUN tar -zxvf v1.2.0.tar.gz
-WORKDIR $HOME/Numberjack-1.2.0
+WORKDIR /home/harijay/downloads/Numberjack-1.2.0
+USER root
 RUN python setup.py build -solver Mistral
 RUN python setup.py install
 

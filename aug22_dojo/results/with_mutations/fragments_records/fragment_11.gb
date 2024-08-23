@@ -1,0 +1,37 @@
+LOCUS       .                        379 bp    DNA              UNK 01-JAN-1980
+DEFINITION  .
+ACCESSION   <unknown id>
+VERSION     <unknown id>
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     misc_feature    1..7
+                     /label="left_flank"
+     misc_feature    8..372
+                     /label="Gene: acs (part)"
+                     /color="#8edfff"
+     misc_feature    8..372
+                     /label="@EnforceTranslation (part)"
+     misc_feature    8
+                     /label="!edited (part)"
+     misc_feature    8..11
+                     /label="overhang (part)"
+     misc_feature    8..11
+                     /label="@DoNotModify (part)"
+     misc_feature    369..372
+                     /label="overhang (part)"
+     misc_feature    369..372
+                     /label="@DoNotModify (part)"
+     misc_feature    373..379
+                     /label="right_flank"
+ORIGIN
+        1 cgtctcatta cagccttctt tgctagatag cctctagtgt cagccaccaa gtccgccacc
+       61 taatccttcg ccgagggtca aagcttctga ccatccaatt gttaggcact cttggaacct
+      121 tgcaagtacc tgatcatgca gaaaatggac ttgcccggag catattcatt ataagtacca
+      181 ttcacggcag gttatagtat gcgttgacgc ggggtgatac ggtaatgcaa gtaaccatcg
+      241 ggccgcggta tgcacataga agggtgtttg acttggtttc ttacagtgca actgcatatg
+      301 tggaccgcca ttccaagtga aaggatacga agggaggttt cggactgcta tccagagcat
+      361 ggaaagcctt catgagacg
+//

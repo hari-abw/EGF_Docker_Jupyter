@@ -1,0 +1,34 @@
+LOCUS       .                        376 bp    DNA              UNK 01-JAN-1980
+DEFINITION  .
+ACCESSION   <unknown id>
+VERSION     <unknown id>
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     misc_feature    1..7
+                     /label="left_flank"
+     misc_feature    8..369
+                     /label="@AvoidChanges (part)"
+     misc_feature    77..369
+                     /label="!cut (part)"
+     misc_feature    8..11
+                     /label="overhang (part)"
+     misc_feature    8..11
+                     /label="@DoNotModify (part)"
+     misc_feature    366..369
+                     /label="overhang (part)"
+     misc_feature    366..369
+                     /label="@DoNotModify (part)"
+     misc_feature    370..376
+                     /label="right_flank"
+ORIGIN
+        1 cgtctcaaga caaaggatgc ctttataaat agtagcggcc ttgtctgcac cagacgtttg
+       61 tgggtcgacg tgctattcta gccaaaagca aaatgtatca tactacaggc aataggccct
+      121 atgctgacca aacttgggga cccttgcgcc ttctctctta cgcataacat gcataggtac
+      181 ctctactcat caggcagggc ggcgtgaggt cactatggct caagatgtgt acgactaaag
+      241 aaaggtttat gctccttccc caaggacgca tttgggactg ctacttgccc ctagcgaatt
+      301 cactaggatt tttgtagaac catgagcgcc ctatccgata gcacagagac aatgctacaa
+      361 gcaactgtgt gagacg
+//
