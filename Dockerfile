@@ -36,22 +36,15 @@ RUN apt-get install -y libxslt1-dev g++
 # For PDF reports:
 RUN apt-get install -y fonts-inconsolata
 
-###########
-# Setup user harijay
-RUN useradd -m -s /bin/bash harijay && \
-usermod -aG sudo harijay
-RUN mkdir -p /home/harijay/downloads && chown harijay:harijay /home/harijay/downloads
-USER harijay
-WORKDIR /home/harijay/downloads
+
 RUN wget https://github.com/Edinburgh-Genome-Foundry/Numberjack/archive/v1.2.0.tar.gz
 ###############################################################################
 # Numberjack is built from source because pip doesn't install it properly:
 
-
+USER jovyan
 RUN wget https://github.com/Edinburgh-Genome-Foundry/Numberjack/archive/v1.2.0.tar.gz
 RUN tar -zxvf v1.2.0.tar.gz
-WORKDIR /home/harijay/downloads/Numberjack-1.2.0
-USER root
+WORKDIR $HOME/Numberjack-1.2.0
 RUN python setup.py build -solver Mistral
 RUN python setup.py install
 
@@ -68,10 +61,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 ########################################################################################
 # Opencontainer labels
 LABEL org.opencontainers.image.title="egf-notebook"
-LABEL org.opencontainers.image.description="Docker Jupyter images with (almost) all EGF packages"
+LABEL org.opencontainers.image.description="Docker Jupyter images with (almost) all EGF packages and patched DNA features viewer"
 LABEL org.opencontainers.image.url="https://github.com/edinburgh-genome-foundry/egf_docker_jupyter"
 LABEL org.opencontainers.image.documentation="https://github.com/edinburgh-genome-foundry/egf_docker_jupyter"
 LABEL org.opencontainers.image.source="https://github.com/edinburgh-genome-foundry/egf_docker_jupyter"
 LABEL org.opencontainers.image.vendor="edinburgh-genome-foundry"
-LABEL org.opencontainers.image.authors="Peter Vegh"
-LABEL org.opencontainers.image.revision="v0.2.1"
+LABEL org.opencontainers.image.authors="Peter Vegh with mods from Hari Jayaram @Arena Bioworks"
+LABEL org.opencontainers.image.revision="v0.2.1.1"
